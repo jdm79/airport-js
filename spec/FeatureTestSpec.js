@@ -14,6 +14,7 @@ describe("Feature Test", function() {
   })
 
   it("planes can take off", function() {
+    spyOn(airport, 'isStormy').and.returnValue(false)
     plane.land(airport)
     plane.takeoff() 
     expect(airport.planes()).not.toContain(plane)

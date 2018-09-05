@@ -14,5 +14,7 @@ Airport.prototype.clearForTakeoff = function(plane) {
 }
 
 Airport.prototype.isStormy = function() {
-  return false
+  var weather = [false, true]
+  var random = Math.floor(Math.random() * weather.length)
+  return weather[random] 
 }

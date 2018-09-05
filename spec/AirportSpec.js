@@ -17,13 +17,10 @@ describe("Airport", function() {
   })
 
   it("it can clear planes to take off", function() {
+    spyOn(airport, 'isStormy').and.returnValue(false)
     airport.clearForLanding(plane)
     airport.clearForTakeoff(plane)
     expect(airport.planes()).toEqual([])
-  })
-
-  it('can check for stormy conditions', function() {
-    expect(airport.isStormy()).toBeFalsy()  
   })
 
   describe('under stormy conditions', function() {
@@ -34,4 +31,7 @@ describe("Airport", function() {
     })
   })
 
+  it('can check for stormy conditions', function() {
+    expect([true, false]).toContain(airport.isStormy())
+  })
 })
