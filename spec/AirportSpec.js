@@ -4,7 +4,7 @@ describe("Airport", function() {
 
   beforeEach(function() {
     airport = new Airport()
-    plane = jasmine.createSpy('plane', ['land', 'takeoff'])
+    plane = jasmine.createSpy('plane')
   })
 
   it("has no planes by default", function() {
